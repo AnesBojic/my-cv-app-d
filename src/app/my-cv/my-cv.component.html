@@ -1,0 +1,88 @@
+<div class="cv-container">
+  <header class="header">
+    <div class="img-container">
+      <img [src]="profile.imageUrl" alt="Anes Bojić" class="profile-img">
+    </div>
+    <h1>{{ profile.name }}</h1>
+    <h2>{{ profile.title }}</h2>
+    <div class="contact-grid">
+      <span><i class="fas fa-envelope"></i> {{ profile.email }}</span>
+      <span><i class="fas fa-phone"></i> {{ profile.phone }}</span>
+      <span><i class="fas fa-map-marker-alt"></i> {{ profile.location }}</span>
+      <a [href]="profile.github" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a [href]="profile.linkedin" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <!-- LEFT COLUMN -->
+    <aside class="left-col">
+      <section>
+        <h3><i class="fas fa-user"></i> About Me</h3>
+        <p>{{ profile.about }}</p>
+      </section>
+
+      <section>
+        <h3><i class="fas fa-tools"></i> Skills</h3>
+        <div class="skills-flex">
+          <span class="skill-tag" *ngFor="let s of skills">{{ s }}</span>
+        </div>
+      </section>
+
+      <section>
+        <h3><i class="fas fa-language"></i> Languages</h3>
+        <p *ngFor="let l of languages"><strong>{{ l.name }}:</strong> {{ l.level }}</p>
+      </section>
+    </aside>
+
+    <!-- RIGHT COLUMN -->
+    <main class="right-col">
+      <!-- EDUCATION -->
+      <section class="section education">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <div class="item education-item">
+          <p class="title">Software Developer</p>
+          <p class="subtitle">Fakultet informacijskih tehnologija at Univerzitet "Džemal Bijedić" u Mostaru</p>
+          <p class="period">2020 – Current | Mostar, Bosnia and Herzegovina</p>
+        </div>
+      </section>
+
+      <!-- WORK EXPERIENCE -->
+      <section class="section work-experience">
+        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+        <div class="item work-item" *ngFor="let exp of experience">
+          <div class="timeline">
+            <span class="period">{{ exp.period }}</span>
+          </div>
+          <div class="content">
+            <p class="title">{{ exp.role }}</p>
+            <p class="subtitle">{{ exp.company }}</p>
+            <ul>
+              <li *ngFor="let p of exp.points">{{ p }}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section projects">
+        <h3><i class="fas fa-code"></i> Projects</h3>
+        <div class="item project-item" *ngFor="let proj of projects">
+          <p class="title">{{ proj.name }}</p>
+          <p class="tech-stack"><strong>Tech:</strong> {{ proj.tech }}</p>
+          <p class="subtitle">{{ proj.desc }}</p>
+        </div>
+      </section>
+
+      <!-- VOLUNTEERING -->
+      <section class="section volunteering">
+        <h3><i class="fas fa-users"></i> Volunteering</h3>
+        <div class="item volunteering-item" *ngFor="let v of volunteering">
+          <p class="title">{{ v.role }}</p>
+          <p class="subtitle">{{ v.org }}</p>
+          <p class="period">{{ v.period }}</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
