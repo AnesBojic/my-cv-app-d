@@ -18,7 +18,7 @@ export class MyCvComponent {
     phone: '(+387) 61373960', // [cite: 5]
     github: 'https://github.com/AnesBojic', // [cite: 11]
     linkedin: 'https://www.linkedin.com/in/anes-bojić-3b63172a0', // [cite: 12]
-    about: 'Young and ambitious student of FIT (Faculty of Information Technologies), with the will to master both software and hardware technologies.' // [cite: 16]
+    about: 'Young and ambitious software developer, with the will to master both software and hardware technologies.' // [cite: 16]
   };
 
   skills = ['.NET C#', 'Laravel PHP', 'C++', 'Angular TS', 'MySQL', 'Microsoft SQL', 'MariaDB', 'Hardware knowledge', 'Firebase', 'GitHub', 'Azure']; //
